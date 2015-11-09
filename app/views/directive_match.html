@@ -1,5 +1,8 @@
 <div class="col-sm-12 col-md-6">
-    <div class="match-container">
+    <div class="match-container" ng-class="{'match-played': match.played }">
+        <div class="match-time">
+            {{ match.date | date: "h:mm a" }}
+        </div>
         <div class="match-player">
             <div class="match-player-flag" style="background-image: url(//flags.fmcdn.net/data/flags/small/{{ Player[0].teamFlag }}.png);"></div>
             <div class="match-player-name">{{ Player[0].name }}</div>

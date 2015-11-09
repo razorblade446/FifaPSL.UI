@@ -14,7 +14,6 @@ angular.module('fifaPsluiApp')
 
                 $scope.$watch('match', function(newMatch){
                     $scope.Player = newMatch.Players;
-                    console.log($scope.Player);
                 });
             }
         };

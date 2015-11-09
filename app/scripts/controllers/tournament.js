@@ -11,7 +11,7 @@ angular.module('fifaPsluiApp')
             });
 
     }])
-    .controller('tournament_status', ['webapi','$scope', function(webapi, $scope){
+    .controller('tournament_status', ['webapi','$scope','common', function(webapi, $scope, common){
 
         $scope.matchList = [];
         $scope.tournamentId = "";
@@ -33,6 +33,8 @@ angular.module('fifaPsluiApp')
                 success: function(response){
                     $scope.tournamentId = response.data.TournamentId;
                     $scope.tournamentName = response.data.name;
+                    common.tournamentId = response.data.TournamentId;
+                    common.tournamentName = response.data.name;
                     $scope.fnTournamentMatches();
                 }
             });
@@ -40,6 +42,12 @@ angular.module('fifaPsluiApp')
 
         $scope.fnSelectTournament = _fnSelectTournament;
 
-        $scope.fnSelectTournament();
+        if (common.tournamentId <= 0) {
+            $scope.fnSelectTournament();
+        }else{
+            $scope.tournamentId = common.tournamentId;
+            $scope.tournamentName = common.tournamentName;
+            $scope.fnTournamentMatches();
+        }
 
     }]);

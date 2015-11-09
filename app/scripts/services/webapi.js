@@ -1,21 +1,21 @@
 'use strict';
 
 angular.module('fifaPsluiApp')
-    .factory('webapi', ['$resource', '$http', 'ENV', function($resource, $http, ENV){
+    .factory('webapi', ['$resource', '$http', 'ENV', function ($resource, $http, ENV) {
 
         var _apiEndpoint = ENV.apiEndpoint;
 
-        function _currentTournamentApi(apiParameters){
+        function _currentTournamentApi(apiParameters) {
 
-            if( typeof apiParameters.success === "undefined" ||
-                Object.prototype.toString.call(apiParameters.success) !== '[object Function]' ){
-                apiParameters.success = function (){
+            if (typeof apiParameters.success === "undefined" ||
+                Object.prototype.toString.call(apiParameters.success) !== '[object Function]') {
+                apiParameters.success = function () {
                 };
             }
 
-            if( typeof apiParameters.failure === "undefined" ||
-                Object.prototype.toString.call(apiParameters.failure) !== '[object Function]' ){
-                apiParameters.failure = function (){
+            if (typeof apiParameters.failure === "undefined" ||
+                Object.prototype.toString.call(apiParameters.failure) !== '[object Function]') {
+                apiParameters.failure = function () {
                 };
             }
 
@@ -26,42 +26,67 @@ angular.module('fifaPsluiApp')
 
         }
 
-        function _tournamentListApi(apiParameters){
+        function _playerListStatisticsApi(apiParameters) {
 
-            if( typeof apiParameters.success === "undefined" ||
-                Object.prototype.toString.call(apiParameters.success) !== '[object Function]' ){
-                apiParameters.success = function (){
+            if (typeof apiParameters.tournament_id === "undefined") {
+                apiParameters.tournament_id = 0;
+            }
+
+            if (typeof apiParameters.success === "undefined" ||
+                Object.prototype.toString.call(apiParameters.success) !== '[object Function]') {
+                apiParameters.success = function () {
                 };
             }
 
-            if( typeof apiParameters.failure === "undefined" ||
-                Object.prototype.toString.call(apiParameters.failure) !== '[object Function]' ){
-                apiParameters.failure = function (){
+            if (typeof apiParameters.failure === "undefined" ||
+                Object.prototype.toString.call(apiParameters.failure) !== '[object Function]') {
+                apiParameters.failure = function () {
                 };
             }
 
             $http({
-                url: _apiEndpoint + "/tournament",
+                url: _apiEndpoint + "/tournament/" + apiParameters.tournament_id + "/players/statistics",
                 method: 'GET'
             }).then(apiParameters.success, apiParameters.failure);
 
         }
 
-        function _tournamentMatchesApi(apiParameters){
+        function _tournamentListApi(apiParameters) {
 
-            if( typeof apiParameters.tournament_id === "undefined"){
-                apiParameters.order_id = "unknown_order";
-            }
-
-            if( typeof apiParameters.success === "undefined" ||
-                Object.prototype.toString.call(apiParameters.success) !== '[object Function]' ){
-                apiParameters.success = function (){
+            if (typeof apiParameters.success === "undefined" ||
+                Object.prototype.toString.call(apiParameters.success) !== '[object Function]') {
+                apiParameters.success = function () {
                 };
             }
 
-            if( typeof apiParameters.failure === "undefined" ||
-                Object.prototype.toString.call(apiParameters.failure) !== '[object Function]' ){
-                apiParameters.failure = function (){
+            if (typeof apiParameters.failure === "undefined" ||
+                Object.prototype.toString.call(apiParameters.failure) !== '[object Function]') {
+                apiParameters.failure = function () {
+                };
+            }
+
+            $http({
+                url: _apiEndpoint + "/tournament/list",
+                method: 'GET'
+            }).then(apiParameters.success, apiParameters.failure);
+
+        }
+
+        function _tournamentMatchesApi(apiParameters) {
+
+            if (typeof apiParameters.tournament_id === "undefined") {
+                apiParameters.tournament_id = 0;
+            }
+
+            if (typeof apiParameters.success === "undefined" ||
+                Object.prototype.toString.call(apiParameters.success) !== '[object Function]') {
+                apiParameters.success = function () {
+                };
+            }
+
+            if (typeof apiParameters.failure === "undefined" ||
+                Object.prototype.toString.call(apiParameters.failure) !== '[object Function]') {
+                apiParameters.failure = function () {
                 };
             }
 
@@ -73,8 +98,9 @@ angular.module('fifaPsluiApp')
         }
 
         return {
-            currentTournament:      _currentTournamentApi,
-            tournamentList:         _tournamentListApi,
+            currentTournament: _currentTournamentApi,
+            playerListStatistics: _playerListStatisticsApi,
+            tournamentList: _tournamentListApi,
             tournamentMatches: _tournamentMatchesApi
         };
 
