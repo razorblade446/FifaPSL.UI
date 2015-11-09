@@ -13,6 +13,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  padding-top: 60px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -104,6 +105,10 @@ body {
 
 }
 
+h1, h2, h3, h4 {
+  font-family: fifa;
+}
+
 .navbar-default, .navbar-inverse {
   .navbar-brand {
     font-family: fifa;
@@ -127,4 +132,73 @@ body {
 .icon-size
 {
   font-size: 87px;
+}
+
+// Contenedores de Partidos
+
+.match-container {
+  display: inline-block;
+  margin: 5px auto 0 auto;
+
+  > .match-player {
+    display: block;
+    float: left;
+    position: relative;
+    width: 250px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    > .match-player-flag{
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+      background-clip: content-box;
+      background-size: 100% auto;
+      background: no-repeat center;
+    }
+
+    > .match-player-name {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50px;
+      width: 170px;
+      height: 20px;
+      padding: 5px;
+      font-size: 15px;
+    }
+
+    > .match-player-team {
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      width: 170px;
+      height: 30px;
+      padding: 5px;
+      font-size: 18px;
+    }
+
+    > .match-player-score {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 220px;
+      width: 30px;
+      height: 50px;
+      padding: 5px;
+      font-size: 30px;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+  }
+}
+
+.match-played {
+  background-color: rgba(0, 128, 0, 0.31);
 }

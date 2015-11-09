@@ -2,10 +2,10 @@
 
 angular
     .module('fifaPsluiApp')
-    .directive('header', function(){
+    .directive('footer', function(){
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: 'views/partial_header.html'
+            templateUrl: 'views/partial_footer.html'
         };
     });

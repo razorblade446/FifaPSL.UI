@@ -394,6 +394,7 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         '.htaccess',
                         '*.html',
+                        'views/*.html',
                         'images/{,*/}*.{webp}',
                         'styles/fonts/{,*/}*.*'
                     ]
@@ -481,6 +482,7 @@ module.exports = function (grunt) {
             local_dependencies: {
                 files: {
                     '<%= yeoman.app %>/index.html': [
+                        '<%= yeoman.app %>/scripts/fakebackend_mocks.js',
                         '<%= yeoman.app %>/scripts/fakebackend.js',
                         '<%= yeoman.app %>/scripts/filters/*.js',
                         '<%= yeoman.app %>/scripts/services/*.js',
@@ -507,6 +509,9 @@ module.exports = function (grunt) {
 
     // injector
     grunt.loadNpmTasks('grunt-injector');
+
+    // Compress
+    grunt.loadNpmTasks('grunt-contrib-compress');
 
     grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
         if (target === 'dist') {

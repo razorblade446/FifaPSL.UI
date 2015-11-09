@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-12">
+        <ul class="breadcrumb">
+            <li><a href="#/tournaments">Torneos</a></li>
+            <li>{{ tournamentName }}</li>
+            <li>Fixtures</li>
+        </ul>
+    </div>
+</div>
+<div ng-repeat="matchDay in matchList">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>{{ matchDay.date | date : "EEEE d 'de' MMMM, yyyy" }}</h2>
+        </div>
+        <fifa-match match="match" ng-repeat="match in matchDay.matches"></fifa-match>
+    </div>
+</div>
