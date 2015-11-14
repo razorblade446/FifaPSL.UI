@@ -34,7 +34,7 @@ fbMocks.playerListStatistics = [
 ];
 
 fbMocks.tournamentCurrent = {
-    TournamentId: 1,
+    id: 1,
     name: "Torneo Fifa 15 - 16"
 };
 

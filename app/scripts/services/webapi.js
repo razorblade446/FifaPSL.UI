@@ -66,7 +66,7 @@ angular.module('fifaPsluiApp')
             }
 
             $http({
-                url: _apiEndpoint + "/tournament/list",
+                url: _apiEndpoint + "/tournament",
                 method: 'GET'
             }).then(apiParameters.success, apiParameters.failure);
 

@@ -31,9 +31,9 @@ angular.module('fifaPsluiApp')
         var _fnSelectTournament = function(){
             webapi.currentTournament({
                 success: function(response){
-                    $scope.tournamentId = response.data.TournamentId;
+                    $scope.tournamentId = response.data.id;
                     $scope.tournamentName = response.data.name;
-                    common.tournamentId = response.data.TournamentId;
+                    common.tournamentId = response.data.id;
                     common.tournamentName = response.data.name;
                     $scope.fnTournamentMatches();
                 }
