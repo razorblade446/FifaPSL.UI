@@ -160,6 +160,7 @@ h1, h2, h3, h4 {
     width: 250px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.05);
+    overflow: hidden;
 
     > .match-player-flag{
       display: block;
@@ -173,6 +174,7 @@ h1, h2, h3, h4 {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
+      text-shadow: 3px 3px 3px #888888;
     }
 
     > .match-player-name {
@@ -209,6 +211,36 @@ h1, h2, h3, h4 {
       font-size: 30px;
       vertical-align: middle;
       text-align: center;
+      text-shadow: 3px 3px 3px #888888;
+    }
+
+    > .match-player-ycard {
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      right: 50px;
+      width: 15px;
+      height: 20px;
+      background-color: #cdcd00;
+      box-shadow: 3px 3px 3px #666666;
+      text-align: center;
+      font-size:  12px;
+      transform: rotate(15deg);
+    }
+
+    > .match-player-rcard {
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      right: 30px;
+      width: 15px;
+      height: 20px;
+      background-color: #9b0000;
+      color: #FFFFFF;
+      box-shadow: 3px 3px 3px #666666;
+      text-align: center;
+      font-size:  12px;
+      transform: rotate(15deg);
     }
 
   }

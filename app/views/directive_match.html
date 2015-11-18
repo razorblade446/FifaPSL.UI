@@ -8,12 +8,16 @@
             <div class="match-player-name">{{ Player[0].name }}</div>
             <div class="match-player-team">{{ Player[0].teamName }}</div>
             <div class="match-player-score">{{ Player[0].score }}</div>
+            <div class="match-player-ycard" ng-if="Player[0].yellowCards > 0">{{ Player[0].yellowCards }}</div>
+            <div class="match-player-rcard" ng-if="Player[0].redCards > 0">{{ Player[0].redCards }}</div>
         </div>
         <div class="match-player">
             <div class="match-player-flag"style="background-image: url(//flags.fmcdn.net/data/flags/small/{{ Player[1].teamFlag }}.png);"></div>
             <div class="match-player-name">{{ Player[1].name }}</div>
             <div class="match-player-team">{{ Player[1].teamName }}</div>
             <div class="match-player-score">{{ Player[1].score }}</div>
+            <div class="match-player-ycard" ng-if="Player[1].yellowCards > 0">{{ Player[1].yellowCards }}</div>
+            <div class="match-player-rcard" ng-if="Player[1].redCards > 0">{{ Player[1].redCards }}</div>
         </div>
     </div>
 </div>

@@ -25,6 +25,22 @@ angular.module('fifaPsluiApp')
             }).then(apiParameters.success, apiParameters.failure);
 
         }
+/*
+        function _loginApi(apiParameters) {
+
+            if (typeof apiParameters.success === "undefined" ||
+                Object.prototype.toString.call(apiParameters.success) !== '[object Function]') {
+                apiParameters.success = function () {
+                };
+            }
+
+            if (typeof apiParameters.failure === "undefined" ||
+                Object.prototype.toString.call(apiParameters.failure) !== '[object Function]') {
+                apiParameters.failure = function () {
+                };
+            }
+        }
+*/
 
         function _playerListStatisticsApi(apiParameters) {
 

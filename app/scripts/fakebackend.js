@@ -7,22 +7,27 @@ app.requires.push('ngMockE2E');
 
 app.run(function ($httpBackend) {
 
-    $httpBackend.whenGET(/\/tournament\/(\d+)\/players\/statistics/)
+    $httpBackend.whenPOST(/\/auth\/token/)
+        .respond(function () {
+            return [200, fbMocks.loginResponse, {}];
+        });
+
+    $httpBackend.whenGET(/\/tournament\/(\d+)\/players\/statistics$/)
         .respond(function () {
             return [200, fbMocks.playerListStatistics, {}];
         });
 
-    $httpBackend.whenGET(/\/tournament\/current/)
+    $httpBackend.whenGET(/\/tournament\/current$/)
         .respond(function () {
             return [200, fbMocks.tournamentCurrent, {}];
         });
 
-    $httpBackend.whenGET(/\/tournament\/list/)
+    $httpBackend.whenGET(/\/tournament$/)
         .respond(function () {
             return [200, fbMocks.tournamentList, {}];
         });
 
-    $httpBackend.whenGET(/\/tournament\/(\d+)\/matches(\/\d+)?/)
+    $httpBackend.whenGET(/\/tournament\/(\d+)\/matches(\/\d+)?$/)
         .respond(function () {
             return [200, fbMocks.tournamentMatches, {}];
         });

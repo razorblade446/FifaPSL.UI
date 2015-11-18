@@ -1,35 +1,39 @@
 var fbMocks = {};
 
+fbMocks.loginResponse = {
+    token: "ABCDEFGHIJISJSISJSISADADAFWSEFSDGFGWERGDFGERG"
+};
+
 fbMocks.playerListStatistics = [
     {
         UserId: 1,
         name: "Frederic Peña",
-        games_played:   8,
-        games_won:      6,
-        games_draw:     1,
-        games_lost:     1,
-        points:         19,
-        average:        0.73
+        games_played: 8,
+        games_won: 6,
+        games_draw: 1,
+        games_lost: 1,
+        points: 19,
+        average: 0.73
     },
     {
         UserId: 2,
         name: "Diego Bonilla",
-        games_played:   8,
-        games_won:      4,
-        games_draw:     2,
-        games_lost:     2,
-        points:         14,
-        average:        0.61
+        games_played: 8,
+        games_won: 4,
+        games_draw: 2,
+        games_lost: 2,
+        points: 14,
+        average: 0.61
     },
     {
         UserId: 3,
         name: "Juan Perez",
-        games_played:   7,
-        games_won:      1,
-        games_draw:     1,
-        games_lost:     5,
-        points:         4,
-        average:        0.17
+        games_played: 7,
+        games_won: 1,
+        games_draw: 1,
+        games_lost: 5,
+        points: 4,
+        average: 0.17
     }
 ];
 
@@ -56,12 +60,16 @@ fbMocks.tournamentMatches = [
                         name: "Frederic Peña",
                         teamName: "Brasil",
                         teamFlag: "br",
+                        yellowCards: 0,
+                        redCards: 0,
                         score: 0
                     }, {
                         UserId: 2,
                         name: "Juan Perez",
                         teamName: "Alemania",
                         teamFlag: "de",
+                        yellowCards: 1,
+                        redCards: 0,
                         score: 5
                     }
                 ]
@@ -75,12 +83,16 @@ fbMocks.tournamentMatches = [
                         name: "Frederic Peña",
                         teamName: "Alemania",
                         teamFlag: "de",
+                        yellowCards: 2,
+                        redCards: 0,
                         score: 2
                     }, {
                         UserId: 2,
                         name: "Juan Perez",
                         teamName: "USA",
                         teamFlag: "us",
+                        yellowCards: 0,
+                        redCards: 1,
                         score: 1
                     }
                 ]
@@ -99,12 +111,16 @@ fbMocks.tournamentMatches = [
                         name: "Frederic Peña",
                         teamName: "Colombia",
                         teamFlag: "co",
+                        yellowCards: 0,
+                        redCards: 0,
                         score: 0
                     }, {
                         UserId: 2,
                         name: "Juan Perez",
                         teamName: "Ecuador",
                         teamFlag: "ec",
+                        yellowCards: 1,
+                        redCards: 1,
                         score: 5
                     }
                 ]
@@ -123,12 +139,16 @@ fbMocks.tournamentMatches = [
                         name: "Frederic Peña",
                         teamName: "Portugal",
                         teamFlag: "pt",
+                        yellowCards: 0,
+                        redCards: 0,
                         score: 0
                     }, {
                         UserId: 2,
                         name: "Juan Perez",
                         teamName: "Honduras",
                         teamFlag: "hn",
+                        yellowCards: 1,
+                        redCards: 3,
                         score: 5
                     }
                 ]
