@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.) styles/vendor.css -->
         <!-- bower:css -->
@@ -58,6 +58,11 @@
         <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+        <script src="bower_components/auth0-lock/build/auth0-lock.js"></script>
+        <script src="bower_components/auth0.js/build/auth0.js"></script>
+        <script src="bower_components/auth0-angular/build/auth0-angular.js"></script>
+        <script src="bower_components/a0-angular-storage/dist/angular-storage.js"></script>
         <!-- endbower -->
         <script src="bower_components/angular-i18n/angular-locale_es-co.js"></script>
         <!-- endbuild -->
@@ -75,6 +80,7 @@
         <script src="/scripts/directives/tournament_selector.js"></script>
         <script src="/scripts/directives/user.js"></script>
         <script src="/scripts/controllers/player.js"></script>
+        <script src="/scripts/controllers/security.js"></script>
         <script src="/scripts/controllers/tournament.js"></script>
         <!-- endinjector -->
         <!-- endbuild -->

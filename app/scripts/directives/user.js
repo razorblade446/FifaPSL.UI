@@ -6,15 +6,9 @@ angular
         return {
             restrict: 'E',
             replace: true,
-            scope: {
-                submit: '&',
-                submitted: '='
-            },
             templateUrl: 'views/directive_user.html',
-            link: function(scope, element){
-                element.on('submit', function(){
-                    console.log("OK");
-                });
+            link: function(){
+
             }
         };
     }]);

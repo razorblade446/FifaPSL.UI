@@ -35,6 +35,11 @@ module.exports = function(config) {
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/angular-jwt/dist/angular-jwt.js',
+      'bower_components/auth0-lock/build/auth0-lock.js',
+      'bower_components/auth0.js/build/auth0.js',
+      'bower_components/auth0-angular/build/auth0-angular.js',
+      'bower_components/a0-angular-storage/dist/angular-storage.js',
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
